@@ -7,7 +7,7 @@ import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 type ModalType = {
-    referee: string;
+    teamName: string;
     matchId: number;
 }
 
@@ -27,7 +27,7 @@ export default function Modal({ teamName, matchId }: ModalType) {
             totalMatches: 0,
             totalPoints: 0,
         },
-        onSubmit: () => updateReferee(matchId, refereeValue)
+        onSubmit: () => updateReferee(matchId, teamName)
     })
 
     return (
