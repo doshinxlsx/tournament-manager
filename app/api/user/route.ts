@@ -46,7 +46,7 @@ export async function POST(req: Request) {
 
 }
 
-export const getUserById = async (id: string) => {
+export async function getUserById(id: string) {
     try {
         const user = await db.user.findUnique({
             where: {
