@@ -8,7 +8,7 @@ enum ROLE {
 
 const store = (set: any) => ({
     matches: [{ id: 0, team_A: '', team_B: '', slug_1: '', slug_2: '', score_A: 0, score_B: 0, matchId: '', matchDate: '', matchStatus: '', referee: '', timeLapsed: 0 }],
-    teams: [{ team_name: '', slug: '', totalPoints: 0, totalMatches: 0, group: '' }],
+    teams: [{ team_name: '', slug: '', totalPoints: 0, totalMatches: 0, group: '', goalNumber: 0, id: 0, createdAt: new Date(), updatedAt: new Date() }],
     user: [{ email: '', username: '', role: ROLE }],
     currentMatch: [{ id: 0, team_A: '', team_B: '', slug_1: '', slug_2: '', score_A: 0, score_B: 0, matchId: '', matchDate: '', matchStatus: '', referee: '', timeLapsed: 0 }],
     loading: true,

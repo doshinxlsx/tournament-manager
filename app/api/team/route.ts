@@ -3,13 +3,28 @@ import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
     const body = await req.json();
-    const { slug, team_name } = body;
+    const { slug, team_name, group,
+        goalNumber,
+        totalMatches,
+        totalPoints,
+        id,
+        createdAt,
+        updatedAt } = body;
     console.log({ body });
+
+
 
     const team = await db.team.create({
         data: {
             team_name,
             slug,
+            group,
+            goalNumber,
+            totalMatches,
+            totalPoints,
+            id,
+            createdAt,
+            updatedAt
         }
     })
     return NextResponse.json(team);
