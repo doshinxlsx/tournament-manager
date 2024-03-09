@@ -3,8 +3,21 @@ import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { db } from "./db";
 import { compare } from 'bcrypt';
-import { getUserById } from "@/app/api/user/route";
 import { UserRole } from "@prisma/client";
+
+async function getUserById(id: string) {
+    try {
+        const user = await db.user.findUnique({
+            where: {
+                id
+            }
+        })
+
+        return user;
+    } catch {
+        return null;
+    }
+}
 
 export const authOptions: NextAuthOptions = {
     adapter: PrismaAdapter(db),
